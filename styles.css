@@ -1,0 +1,307 @@
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(270deg, #f0f4f8, #e0e7ec);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.logo {
+    max-width: 60%;
+    height: auto;
+    margin-bottom: 2rem;
+    animation: fadeIn 2s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #000;
+    max-width: 80%;
+    margin-top: 0;
+    font-weight: 400;
+    animation: fadeIn 3s ease-in-out;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #333;
+    max-width: 80%;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.quote {
+    margin: 0;
+    font-style: italic;
+    color: #666;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff7e5f;
+    transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    footer {
+        font-size: 1rem;
+    }
+
+    nav {
+        flex-direction: row;
+    }
+
+    nav a {
+        margin-left: 1rem;
+        margin-bottom: 0;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .logo {
+        max-width: 120%;
+        max-height: 100vh;
+    }
+}
+
+/* Styles for sticky header on mobile */
+@media (max-width: 767px) {
+    .sticky-header {
+        position: sticky;
+        top: 0;
+        background-color: #ffffff;
+        z-index: 1000;
+    }
+
+    .sticky-header.scrolled {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .sticky-header .logo-link {
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sticky-header .logo-link img {
+        max-width: 100px;
+        height: auto;
+    }
+
+    main {
+        padding-top: 0;
+    }
+
+    .logo {
+        max-width: 70%;
+    }
+}
+
+/* Privacy Policy and Terms & Conditions Styles */
+.policy-main {
+    flex: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem 2rem;
+}
+
+.policy-main h1 {
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 1rem;
+}
+
+.policy-main h2 {
+    font-size: 1.8rem;
+    color: #000;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.policy-main p,
+.policy-main li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.policy-main ul {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.policy-main li {
+    margin-bottom: 0.8rem;
+}
+
+.last-modified {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .policy-main {
+        padding: 0 1.5rem 3rem 1.5rem;
+    }
+
+    .policy-main h1 {
+        font-size: 2rem;
+    }
+
+    .policy-main h2 {
+        font-size: 1.5rem;
+    }
+
+    .policy-main p,
+    .policy-main li {
+        font-size: 1rem;
+    }
+}
+
+/* Footer adjustments for policy pages */
+.policy-main + footer {
+    position: relative;
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.policy-main + footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.policy-main + footer nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.policy-main + footer nav a:hover {
+    color: #000;
+}
+
+.logo-container {
+    text-align: center;
+    padding: 2rem 0;
+    margin: 0 auto;
+    max-width: 180px;
+}
+
+.logo-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .logo-container {
+        display: none;
+    }
+}
+
+/* Hide sticky header on desktop */
+@media (min-width: 768px) {
+    .sticky-header {
+        display: none;
+    }
+}
+
+/* Show sticky header on mobile */
+@media (max-width: 767px) {
+    .sticky-header {
+        position: sticky;
+        top: 0;
+        background-color: transparent;
+        z-index: 1000;
+        padding: 1rem;
+    }
+
+    .sticky-header .logo-link img {
+        max-width: 150px;
+        height: auto;
+    }
+
+    .logo-container {
+        display: none;
+    }
+}
+
+/* Main content spacing */
+main {
+    padding-top: 2rem;
+}
+
+/* Ensure proper spacing after logo on homepage */
+.logo + .subtitle {
+    margin-top: 2rem;
+}
